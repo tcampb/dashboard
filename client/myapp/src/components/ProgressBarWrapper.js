@@ -8,16 +8,16 @@ class ProgressBarWrapper extends Component {
       return (
         <div className="progressbar-wrapper">
             <div className="status pipeline">
-              Pipeline
+              <span>Pipeline</span>
             </div>
             <div className="status researching">
-              Researching
+            <span>Researching</span>
             </div>
             <div className="status pending">
-              Pending Approval
+            <span>Pending Approval</span>
             </div>
             <div className="status approved">
-              Approved
+            <span>Approved</span>
             </div>
         </div>
       );

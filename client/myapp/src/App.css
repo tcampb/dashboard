@@ -22,6 +22,48 @@
   font-size: large;
 }
 
+.header {
+  box-shadow: 0 7px 20px -5px rgba(0,0,0,0.2);
+  width: 100%;
+  height: 110px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.header-top button {
+  width: 150px;
+  height: 40px;
+  background-color: #006fd2;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.filter h3, .filter h2 {
+  margin: 0px;
+  text-align: left;
+}
+
+.header-bottom {
+  display: flex;
+  padding-left: 15px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

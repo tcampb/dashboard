@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import Header from './Header.js';
+import ProgressBarWrapper from './ProgressBarWrapper.js';
 import {
   BrowserRouter as Router,
   Route
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <div className="App">
           <Header />
+          <ProgressBarWrapper />
         <p className="App-intro">
           To get started, edit <code>{this.state.data}</code> and save to reload.
         </p>

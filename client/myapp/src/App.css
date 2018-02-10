@@ -71,6 +71,20 @@ html, body{
   font-size: 15px;
 }
 
+.global-actions-console {
+  display: flex;
+  justify-content: flex-end;
+  width: 150px;
+}
+
+.global-action {
+  margin: 0 15px;
+  font-size: 30px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
 .header-bottom {
   display: flex;
   padding-left: 15px;

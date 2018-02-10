@@ -6,7 +6,11 @@ class GlobalActions extends Component {
     }
 
     render() {
-        return <div>PlaceHolder</div>
+        return <div className="global-actions-console">
+                <div className="global-action"><i class="fas fa-plus-square"></i></div>
+                <div className="global-action"><i class="fas fa-cog"></i></div>
+                <div className="global-action"><i class="fas fa-user"></i></div>
+                    </div>
     }
 }
 

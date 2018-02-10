@@ -11,10 +11,6 @@ import {
 const url = 'http://localhost:3000/api';
 
 
-
-
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +22,9 @@ class App extends Component {
   }
 
   onChangeHandler(searchTerm) {
-    console.log(searchTerm);
+    const re = new RegExp('^' + searchTerm + '.*', 'gi')
+    const filteredList = db.filter(record => record.company.match(re))
+    console.log(filteredList);
   }
 
   componentDidMount() {
@@ -50,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header records={db} onChangeHandler={this.onChangeHandler}/>
+          <Header records={db} onChangeHandler={this.onChangeHandler} />
           <Container records={db} />
       </div>
     );

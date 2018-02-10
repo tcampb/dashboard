@@ -15,7 +15,7 @@ const data =
     dealLead:"Kate Ryan",
     stage:"Pending Approval"
 },{
-    company:"Edge ",
+    company:"Edge",
     annualRevenue:"50M",
     dealLead:"James Smith",
     stage:"Approved"

@@ -85,6 +85,10 @@ html, body{
   cursor: pointer;
 }
 
+.global-action img {
+  border-radius: 50%;
+}
+
 .header-bottom {
   display: flex;
   padding-left: 15px;
@@ -175,5 +179,28 @@ html, body{
   width: 85%;
   display: block;
   margin: 0 auto;
+  height: 190px;
+  text-decoration: none;
+  color: black;
 }
+
+#card h3 {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+
+#card-content {
+  padding-top: 0;
+}
+
+#card-content h4 {
+  margin: 15px auto;
+}
+
+#card-content span {
+  font-weight: 400;
+}
+
+
 

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import companyLogo from './companylogo.png';
 
 class GlobalActions extends Component {
     constructor(props) {
@@ -6,10 +7,12 @@ class GlobalActions extends Component {
     }
 
     render() {
+        const plusStyle = {color: '#00a3fa'};
+        const cogStyle = {color: '#b0adab'};
         return <div className="global-actions-console">
-                <div className="global-action"><i class="fas fa-plus-square"></i></div>
-                <div className="global-action"><i class="fas fa-cog"></i></div>
-                <div className="global-action"><i class="fas fa-user"></i></div>
+                <div className="global-action"><i class="fas fa-plus-square" style={plusStyle}></i></div>
+                <div className="global-action"><i class="fas fa-cog" style={cogStyle}></i></div>
+                <div className="global-action"><img src={companyLogo} width="32px" height="32px"/></div>
                     </div>
     }
 }

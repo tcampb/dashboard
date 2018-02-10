@@ -94,6 +94,12 @@ html, body{
   padding-left: 15px;
 }
 
+.listview-info {
+  display: flex;
+  width: 32%;
+  justify-content: space-around;
+}
+
 .progressbar-wrapper {
   display: flex;
   margin-top: 15px;

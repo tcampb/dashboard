@@ -8,7 +8,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            records: this.props.records
         }
     }
 
@@ -20,7 +20,7 @@ class Header extends Component {
                     <GlobalActions />
                     </div>
                     <div className="header-bottom">
-                    <RollUpSummary />
+                    <RollUpSummary totalRecords={this.state.records.length}/>
                     </div>
                     </header>
     }

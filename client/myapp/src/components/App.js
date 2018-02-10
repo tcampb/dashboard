@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header />
+          <Header records={db} />
           <Container records={db} />
       </div>
     );

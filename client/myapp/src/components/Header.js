@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Filter from './Filter';
 import SearchBar from './SearchBar';
+import GlobalActions from './GlobalActions';
 import RollUpSummary from './RollUpSummary';
 
 class Header extends Component {
@@ -15,8 +16,8 @@ class Header extends Component {
         return     <header className="header">
                     <div className="header-top">
                     <Filter />
-                    {/* <SearchBar /> */}
-                    <button>Add Target</button>
+                    <SearchBar />
+                    <GlobalActions />
                     </div>
                     <div className="header-bottom">
                     <RollUpSummary />

@@ -4,7 +4,7 @@ html, body{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 *,*:before, *:after{
@@ -20,6 +20,7 @@ html, body{
 .header-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 25px 0;
 }
 
@@ -46,6 +47,28 @@ html, body{
 .filter h3, .filter h2 {
   margin: 0px;
   text-align: left;
+}
+
+.searchbar-wrapper {
+  border: 1px solid #DDDBDA;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 35px;
+  width: 425px;
+  border-radius: 2px;
+}
+
+.searchbar {
+  width: 75%;
+  display: flex;
+}
+
+.searchbar input {
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 15px;
 }
 
 .header-bottom {
@@ -120,6 +143,9 @@ html, body{
 
 .status-col {
   width: 25%;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  min-height: 500px;
 }
 
 .status-col h2 {

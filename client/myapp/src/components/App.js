@@ -22,9 +22,14 @@ class App extends Component {
       data: [],
       error: null
     }
+    this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
-    componentDidMount() {
+  onChangeHandler(searchTerm) {
+    console.log(searchTerm);
+  }
+
+  componentDidMount() {
       axios.get(url)
         .then(res => res.json())
         .then(
@@ -45,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header records={db} />
+          <Header records={db} onChangeHandler={this.onChangeHandler}/>
           <Container records={db} />
       </div>
     );

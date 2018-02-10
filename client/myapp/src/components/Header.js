@@ -8,15 +8,17 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            records: this.props.records
+            records: this.props.records,
+            onChangeHandler: this.props.onChangeHandler
         }
+
     }
 
     render() {
         return     <header className="header">
                     <div className="header-top">
                     <Filter />
-                    <SearchBar />
+                    <SearchBar onChangeHandler={this.state.onChangeHandler}/>
                     <GlobalActions />
                     </div>
                     <div className="header-bottom">

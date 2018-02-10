@@ -5,6 +5,9 @@ import RecordColumn from './RecordColumn.js';
 class Container extends Component {
     constructor(props) {
       super(props);
+      this.state = {
+        records: props.records
+      }
     }
   
     render() {
@@ -12,7 +15,7 @@ class Container extends Component {
         <div className="container">
         <ProgressBarWrapper />
         <div className="status-columns">
-        <RecordColumn />
+        <RecordColumn records={this.state.records} />
         </div>
         </div>
       );

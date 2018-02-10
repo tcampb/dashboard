@@ -3,6 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import Header from './Header.js';
 import Container from './Container.js';
+import db from '../dummyData.js';
 import {
   BrowserRouter as Router,
   Route
@@ -11,10 +12,12 @@ const url = 'http://localhost:3000/api';
 
 
 
+
+
+
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       data: [],
       error: null
@@ -43,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
           <Header />
-          <Container />
+          <Container records={db} />
       </div>
     );
   }

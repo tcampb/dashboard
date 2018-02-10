@@ -4,26 +4,29 @@ import Record from './Record.js';
 class RecordColumn extends Component {
     constructor(props) {
       super(props);
+      this.state = {
+        records: props.records
+      }
     }
   
     render() {
       return (
         <React.Fragment>
+        {/* Prospecting */}
         <div className="status-col">
-        <h2>$67,400,000</h2>
-        <Record />
+        <Record records={this.state.records.filter((record) => record.stage === 'Prospecting')} />
         </div>
+        {/* Researching */}
         <div className="status-col">
-        <h2>$21,826,560</h2>
-        <Record />
+        <Record records={this.state.records.filter((record) => record.stage === 'Researching')} />
         </div>
+        {/* Pending Approval */}
         <div className="status-col">
-        <h2>$13,050,000</h2>
-        <Record />
+        <Record records={this.state.records.filter((record) => record.stage === 'Pending Approval')} />
         </div>
+        {/* Approved */}
         <div className="status-col">
-        <h2>$1,154,000</h2>
-        <Record />
+        <Record records={this.state.records.filter((record) => record.stage === 'Approved')} />
         </div>
         </React.Fragment>
       );

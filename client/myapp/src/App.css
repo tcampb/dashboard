@@ -178,7 +178,7 @@ html, body{
 #card {
   width: 85%;
   display: block;
-  margin: 0 auto;
+  margin: 15px auto;
   height: 190px;
   text-decoration: none;
   color: black;

@@ -5,8 +5,10 @@ class SearchBar extends Component {
         super(props);
         this.state = {
             searchTerm: '',
-            inputFocus: false
+            inputFocus: false,
+            onChangeHandler: this.props.onChangeHandler
         }
+        this.searchHandler = this.searchHandler.bind(this);
     }
 
     render() {
@@ -14,7 +16,7 @@ class SearchBar extends Component {
         const divStyle = {paddingBottom: '3px'};
         return <div className="searchbar-wrapper">
                 <div className="searchbar">
-                    <input type="text" placeholder="Search..." onFocus={this.clickHandler} onBlur={this.clickHandler} />
+                    <input type="text" placeholder="Search..." onFocus={this.clickHandler} onBlur={this.clickHandler} onChange={this.searchHandler} />
                 </div>
                 <div style={divStyle}><i className="fas fa-search" style={iconStyle}></i></div>
                 <div className="searchbar-dropdown hide" data-dropdown>Company Name</div>
@@ -25,6 +27,11 @@ class SearchBar extends Component {
         const e = document.querySelector('[data-dropdown]');
         event.type === 'focus' ? e.classList.remove('hide')
                                : e.classList.add('hide');
+    }
+
+    searchHandler(event) {
+        const input = event.target.value;
+        this.state.onChangeHandler(input);
     }
 }
 

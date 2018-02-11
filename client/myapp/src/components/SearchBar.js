@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import logo from './logo.png';
+import targetLogo from './target_logo.png';
+import contactLogo from './contact_logo.png';
 
 class SearchBar extends Component {
     constructor(props){
@@ -8,16 +9,17 @@ class SearchBar extends Component {
             searchTerm: '',
             inputFocus: false,
             onChangeHandler: this.props.onChangeHandler,
-            filteredList: this.props.filteredList
+            filteredList: this.props.defaultRecords
         }
         this.searchHandler = this.searchHandler.bind(this);
+        this.clickHandler = this.clickHandler.bind(this);
     }
 
     render() {
         const listItemInfoStyle = {margin: '0px', paddingBottom: '3px'};
         const iconStyle = {fontSize: '.8125rem', color: '#b0adab'};
         const divStyle = {paddingBottom: '3px'};
-        const listItems = this.state.filteredList.map(record => <li><div><img src={logo} width="36px" height="36px" /></div> 
+        const listItems = this.state.filteredList.map(record => <li><div><img src={targetLogo} width="36px" height="36px" /></div> 
         <div><h4 style={listItemInfoStyle}>{record.company}</h4><h6 style={listItemInfoStyle}>{record.objectType}</h6></div></li>)
         return <div className="searchbar-wrapper">
                 <div className="searchbar">

@@ -51,7 +51,6 @@ class App extends Component {
     }
 
   render() {
-    console.log(this.state.filteredList);
     return (
       <div className="App">
           <Header records={Target} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>

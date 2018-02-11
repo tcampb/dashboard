@@ -3,7 +3,8 @@ import '../App.css';
 import axios from 'axios';
 import Header from './Header.js';
 import Container from './Container.js';
-import db from '../dummyData.js';
+import Target from '../targetData.js';
+import Contact from '../contactData.js';
 import {
   BrowserRouter as Router,
   Route
@@ -16,15 +17,19 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      error: null
+      error: null,
+      filteredList: []
     }
     this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
-  onChangeHandler(searchTerm) {
+  onChangeHandler(searchTerm, callback) {
     const re = new RegExp('^' + searchTerm + '.*', 'gi')
-    const filteredList = db.filter(record => record.company.match(re))
-    console.log(filteredList);
+    const filteredList = Target.filter(record => record.company.match(re))
+    this.setState({
+      filteredList
+    })
+    callback(filteredList);
   }
 
   componentDidMount() {
@@ -46,10 +51,11 @@ class App extends Component {
     }
 
   render() {
+    console.log(this.state.filteredList);
     return (
       <div className="App">
-          <Header records={db} onChangeHandler={this.onChangeHandler} />
-          <Container records={db} />
+          <Header records={Target} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
+          <Container records={Target} />
       </div>
     );
   }

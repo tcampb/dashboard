@@ -84,6 +84,23 @@ html, body{
   z-index: 9999;
 }
 
+.searchbar-dropdown ul {
+  list-style-type: none;
+  font-size: 1rem;
+}
+
+.searchbar-dropdown li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: -25px;
+  cursor: pointer;
+}
+
+.searchbar-dropdown img {
+  padding: 5px 5px 0 0;
+}
+
 .global-actions-console {
   display: flex;
   justify-content: flex-end;

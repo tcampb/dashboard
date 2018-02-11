@@ -11,7 +11,7 @@ class Record extends Component {
     render() {
         const recordCards = this.state.records.map(record => 
             (<a href="#" class="ui card" id="card">
-            <h3>{record.company}</h3>
+            <h3>{record.name}</h3>
                 <div class="content" id="card-content">
                 <h4><strong>Annual Revenue:</strong><span> {record.annualRevenue}</span></h4>
                 <h4><strong>Location:</strong><span> Kentucky</span></h4>

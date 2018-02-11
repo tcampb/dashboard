@@ -45,8 +45,11 @@ class SearchBar extends Component {
 
     // Update SearchBar state when input value changes
     searchHandler(event) {
+        const e = document.querySelector('[data-dropdown]');
         const input = event.target.value;
         this.state.onChangeHandler(input, (filteredList) => {
+            filteredList.length > 0 ?e.classList.remove('hide')
+            : e.classList.add('hide');
             this.setState({
                 filteredList
             })

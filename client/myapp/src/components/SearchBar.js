@@ -19,11 +19,13 @@ class SearchBar extends Component {
         const listItemInfoStyle = {margin: '0px', paddingBottom: '3px'};
         const iconStyle = {fontSize: '.8125rem', color: '#b0adab'};
         const divStyle = {paddingBottom: '3px'};
-        const listItems = this.state.filteredList.map(record => <li><div><img src={targetLogo} width="36px" height="36px" /></div> 
-        <div><h4 style={listItemInfoStyle}>{record.company}</h4><h6 style={listItemInfoStyle}>{record.objectType}</h6></div></li>)
+        const listItems = this.state.filteredList.map(record => <li><div><img src={record.objectType != 'Target' ? contactLogo
+                                                                                                                 : targetLogo} 
+        width="36px" height="36px" /></div> 
+        <div><h4 style={listItemInfoStyle}>{record.name}</h4><h6 style={listItemInfoStyle}>{record.objectType}</h6></div></li>)
         return <div className="searchbar-wrapper">
                 <div className="searchbar">
-                    <input type="text" placeholder="Search..." onFocus={this.clickHandler} onBlur={this.clickHandler} onChange={this.searchHandler} />
+                    <input type="text" placeholder="Search for Company or Contact..." onFocus={this.clickHandler} onBlur={this.clickHandler} onChange={this.searchHandler} />
                 </div>
                 <div style={divStyle}><i className="fas fa-search" style={iconStyle}></i></div>
                 <div className="searchbar-dropdown hide" data-dropdown>

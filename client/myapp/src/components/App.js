@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      targetData: [],
       error: null,
       filteredList: []
     }
@@ -25,15 +25,15 @@ class App extends Component {
   }
 
   onChangeHandler(searchTerm, callback) {
-    // const re = new RegExp('^' + searchTerm + '.*', 'gi');
-    // const companyContactArray = Targets.concat(Contacts);
-    // let filteredList = companyContactArray.filter(record => record.name.match(re));
-    // // Return first 5 results
-    // filteredList = filteredList.slice(0, 5);
-    // this.setState({
-    //   filteredList
-    // })
-    // callback(filteredList);
+    const re = new RegExp('^' + searchTerm + '.*', 'gi');
+    const companyContactArray = this.state.targetData.concat(Contacts);
+    let filteredList = companyContactArray.filter(record => record.name.match(re));
+    // Return first 5 results
+    filteredList = filteredList.slice(0, 5);
+    this.setState({
+      filteredList
+    })
+    callback(filteredList);
   }
 
   componentDidMount() {
@@ -42,7 +42,7 @@ class App extends Component {
         .then(
           (targetRecords) => {
             this.setState({
-              data: targetRecords
+              targetData: targetRecords
             });
           },
           (error) => {
@@ -57,8 +57,8 @@ class App extends Component {
     return (
       <div className="App">
           <Modal />
-          <Header records={this.state.data} contactRecords={Contacts} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
-          <Container records={this.state.data} />
+          <Header records={this.state.targetData} contactRecords={Contacts} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
+          <Container records={this.state.targetData} />
       </div>
     );
   }

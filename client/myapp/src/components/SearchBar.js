@@ -19,9 +19,7 @@ class SearchBar extends Component {
         const listItemInfoStyle = {margin: '0px', paddingBottom: '3px'};
         const iconStyle = {fontSize: '.8125rem', color: '#b0adab'};
         const divStyle = {paddingBottom: '3px'};
-        const listItems = this.state.filteredList.map(record => <li><div><img alt="objectType" src={record.objectType !=='Target' ?                                                                                                                contactLogo
-                                                                                                                      : targetLogo} 
-        width="36px" height="36px" /></div> 
+        const listItems = this.state.filteredList.map((record, i) => <li key={i}><div><img alt="objectType" src={record.objectType !=='Target' ? contactLogo : targetLogo} width="36px" height="36px" /></div> 
         <div><h4 style={listItemInfoStyle}>{record.name}</h4><h6 style={listItemInfoStyle}>{record.objectType}</h6></div></li>)
         return <div className="searchbar-wrapper">
                 <div className="searchbar">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import Modal from './Modal.js';
 import Header from './Header.js';
 import Container from './Container.js';
 import Targets from '../targetData.js';
@@ -35,6 +36,12 @@ class App extends Component {
     callback(filteredList);
   }
 
+  createOverlay() {
+
+  }
+
+
+
   componentDidMount() {
       axios.get(url)
         .then(res => res.json())
@@ -55,10 +62,13 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
+          <Modal />
           <Header records={Targets} contactRecords={Contacts} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
           <Container records={Targets} />
       </div>
+      </Router>
     );
   }
 }

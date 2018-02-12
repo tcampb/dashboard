@@ -48,8 +48,9 @@ class SearchBar extends Component {
         const e = document.querySelector('[data-dropdown]');
         const input = event.target.value;
         this.state.onChangeHandler(input, (filteredList) => {
-            filteredList.length > 0 ?e.classList.remove('hide')
-            : e.classList.add('hide');
+            // If search results empty, hide dropdown menu
+            filteredList.length > 0 ? e.classList.remove('hide')
+                                    : e.classList.add('hide');
             this.setState({
                 filteredList
             })

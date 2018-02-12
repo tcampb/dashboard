@@ -38,7 +38,7 @@ const Header = (props) => {
     return     <header className="header">
                     <div className="header-top">
                     <Filter />
-                    <SearchBar onChangeHandler={props.onChangeHandler} filteredList={props.filteredList} defaultRecords={props.records.slice(0,6)} />
+                    <SearchBar onChangeHandler={props.onChangeHandler} filteredList={props.filteredList} defaultRecords={props.records.slice(0,5)} />
                     <GlobalActions />
                     </div>
                     <div className="header-bottom">

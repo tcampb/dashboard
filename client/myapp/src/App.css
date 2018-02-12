@@ -297,15 +297,26 @@ html, body{
   padding: 16px;
 }
 
-.ui-input {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
+.form-legend {
+  font-size: 1rem;
+  line-height: 1.875rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  background: #f3f2f2;
+  padding-left: 12px;
+  color: rgb(62, 62, 60);
 }
 
-.ui-input > span {
+.ui-input {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.ui-input span {
   display: block;
   font-size: .75rem;
+  float: left;
+  color: rgb(62, 62, 60);
 }
 
 .ui-input > input {
@@ -316,12 +327,31 @@ html, body{
   width: 100%;
   padding: 0 1rem 0 .75rem;
   line-height: 1.875rem;
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+
+.required {
+  display: flex;
+  align-items: flex-start;
+  float: left;
+  padding-right: 2px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding-left: 2px;
+}
+
+.required svg {
+  font-size: 5px;
+  margin-top: 2px;
+  display: block;
+  color: rgb(194, 57, 52);
 }
 
 .required:before {
   display: none;
   font-family: "Font Awesome 5 Solid";   
-  content: "\f007";
+  content: "\f069";
 }
 
 .modal-footer {
@@ -350,3 +380,18 @@ html, body{
   display: none;
 }
 
+.col-left {
+  float: left;
+  width: 50%;
+}
+
+.col-right {
+  float: right;
+  width: 50%;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Filter from './Filter';
 import SearchBar from './SearchBar';
 import GlobalActions from './GlobalActions';

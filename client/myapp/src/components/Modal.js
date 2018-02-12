@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TargetForm from './TargetForm.js';
 
 const closeModal = () => {
@@ -7,7 +7,7 @@ const closeModal = () => {
 }
 
 const saveForm = () => {
-    
+
 }
 
 const Modal = () => {

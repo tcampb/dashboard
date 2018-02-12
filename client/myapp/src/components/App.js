@@ -4,12 +4,12 @@ import axios from 'axios';
 import Modal from './Modal.js';
 import Header from './Header.js';
 import Container from './Container.js';
-import Targets from '../targetData.js';
+// import Targets from '../targetData.js';
 import Contacts from '../contactData.js';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+// import {
+//   BrowserRouter as Router,
+//   Route
+// } from 'react-router-dom';
 const url = 'http://localhost:3000/api';
 
 
@@ -25,31 +25,24 @@ class App extends Component {
   }
 
   onChangeHandler(searchTerm, callback) {
-    const re = new RegExp('^' + searchTerm + '.*', 'gi');
-    const companyContactArray = Targets.concat(Contacts);
-    let filteredList = companyContactArray.filter(record => record.name.match(re));
-    // Return first 5 results
-    filteredList = filteredList.slice(0, 5);
-    this.setState({
-      filteredList
-    })
-    callback(filteredList);
+    // const re = new RegExp('^' + searchTerm + '.*', 'gi');
+    // const companyContactArray = Targets.concat(Contacts);
+    // let filteredList = companyContactArray.filter(record => record.name.match(re));
+    // // Return first 5 results
+    // filteredList = filteredList.slice(0, 5);
+    // this.setState({
+    //   filteredList
+    // })
+    // callback(filteredList);
   }
-
-  createOverlay() {
-
-  }
-
-
 
   componentDidMount() {
       axios.get(url)
-        .then(res => res.json())
+        .then(res => res.data)
         .then(
-          (result) => {
-            console.log(result);
+          (targetRecords) => {
             this.setState({
-              data: result.name
+              data: targetRecords
             });
           },
           (error) => {
@@ -62,13 +55,11 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
       <div className="App">
           <Modal />
-          <Header records={Targets} contactRecords={Contacts} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
-          <Container records={Targets} />
+          <Header records={this.state.data} contactRecords={Contacts} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
+          <Container records={this.state.data} />
       </div>
-      </Router>
     );
   }
 }

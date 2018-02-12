@@ -12,7 +12,7 @@ class Filter extends Component {
     render() {
         return <div className="filter-logo">
                 <div className="logo">
-                <img src={logo} height="32px" width="32px" />
+                <img src={logo} height="32px" width="32px" alt="logo" />
                 </div>
                 <div className="filter">
                 <h3>Targets</h3>

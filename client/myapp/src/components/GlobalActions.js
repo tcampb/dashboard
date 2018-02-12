@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import companyLogo from './companylogo.png';
 
 class GlobalActions extends Component {
     constructor(props) {

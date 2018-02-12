@@ -32,8 +32,28 @@ const Modal = () => {
                         <input type="text"  /></div>
                         </div>
                         <div className="clearfix"></div>
-                        <h3 className="form-legend">Related Contacts</h3>
-
+                        <h3 className="form-legend">
+                        <span>Related Contacts</span>
+                        <div className="add-contact">
+                        <i class="fas fa-plus-square"></i>
+                        </div>
+                        </h3>
+                        <div className="col-left">
+                        <div className="ui-input"><span className="required"></span><span>Contact Name</span>
+                        <div className="clearfix"></div>
+                        <input type="text" required /></div>
+                        <div className="ui-input"><span>Title</span>
+                        <div className="clearfix"></div>
+                        <input type="text" required /></div>
+                        </div>
+                        <div className="col-right">
+                        <div className="ui-input"><span>Email</span>
+                        <div className="clearfix"></div>
+                        <input type="email" required /></div>
+                        <div className="ui-input"><span>Phone</span>
+                        <div className="clearfix"></div>
+                        <input type="phone" required /></div>
+                        </div>
                         </form>
                          
 

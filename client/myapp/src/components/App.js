@@ -21,10 +21,10 @@ class App extends Component {
       error: null,
       filteredList: []
     }
-    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this._onChangeHandler = this._onChangeHandler.bind(this);
   }
 
-  onChangeHandler(searchTerm, callback) {
+  _onChangeHandler(searchTerm, callback) {
     const re = new RegExp('^' + searchTerm + '.*', 'gi');
     const companyContactArray = this.state.targetData.concat(Contacts);
     let filteredList = companyContactArray.filter(record => record.name.match(re));
@@ -37,12 +37,27 @@ class App extends Component {
   }
 
   componentDidMount() {
-      axios.get(url)
+      axios.get(`${url}/targets`)
         .then(res => res.data)
         .then(
           (targetRecords) => {
             this.setState({
               targetData: targetRecords
+            });
+          },
+          (error) => {
+            this.setState({
+              error
+            })
+          }
+        )
+
+        axios.get(`${url}/contacts`)
+        .then(res => res.data)
+        .then(
+          (contactRecords) => {
+            this.setState({
+              contactData: contactRecords
             });
           },
           (error) => {
@@ -57,7 +72,7 @@ class App extends Component {
     return (
       <div className="App">
           <Modal />
-          <Header records={this.state.targetData} contactRecords={Contacts} onChangeHandler={this.onChangeHandler} filteredList={this.state.filteredList}/>
+          <Header records={this.state.targetData} contactRecords={Contacts} onChangeHandler={this._onChangeHandler} filteredList={this.state.filteredList}/>
           <Container records={this.state.targetData} />
       </div>
     );

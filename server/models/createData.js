@@ -17,6 +17,7 @@ User.create({
                 stage: "Prospecting",
                 location: "Kentucky",
                 industry: "",
+                objectType: "Target",
                 employees: 0,
             })
             .then(() =>
@@ -28,6 +29,7 @@ User.create({
                     stage: "Researching",
                     location: "Kentucky",
                     industry: "",
+                    objectType: "Target",
                     employees: 0,
                 })
             )
@@ -40,6 +42,7 @@ User.create({
                     stage: "Pending Approval",
                     location: "Kentucky",
                     industry: "",
+                    objectType: "Target",
                     employees: 0,
                 })
             )
@@ -52,6 +55,7 @@ User.create({
                     stage: "Approved",
                     location: "Kentucky",
                     industry: "",
+                    objectType: "Target",
                     employees: 0,
                 })
             )

@@ -35,6 +35,7 @@ import RollUpSummary from './RollUpSummary';
 // }
 
 const Header = (props) => {
+    console.log(props.records.length);
     return     <header className="header">
                     <div className="header-top">
                     <Filter />

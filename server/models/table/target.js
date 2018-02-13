@@ -25,6 +25,9 @@ const Target = sequelize.define('target',{
     },
     industry:{
         type: Sequelize.STRING, allowNull: true
+    },
+    objectType:{
+        type: Sequelize.STRING, allowNull: true
     }
 });
 

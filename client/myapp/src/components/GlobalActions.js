@@ -14,9 +14,6 @@ class GlobalActions extends Component {
                 <button class="ui blue basic button" style={buttonStyle}>New Contact</button>
                 <button class="ui blue basic button" style={buttonStyle}>Settings</button>
                 </div>
-                {/* <div className="global-action" onClick={this.addTarget}><i class="fas fa-plus-square" style={plusStyle}></i></div>
-                <div className="global-action"><i class="fas fa-cog" style={cogStyle}></i></div>
-                <div className="global-action"><img src={companyLogo} width="32px" height="32px"/></div> */}
                     </div>
     }
 

@@ -19,9 +19,46 @@ class App extends Component {
     this.state = {
       targetData: [],
       error: null,
-      filteredList: []
+      filteredList: [],
+      formObject: {
+        targetName: 'a',
+        industry: '',
+        annualRevenue: null,
+        employees: null,
+        location: '',
+        dealLead: '',
+        title: '',
+        relatedContactName: '',
+        relatedContactEmail: '',
+        relatedContactTitle: '',
+        relatedContactPhone: ''
+      }
     }
     this._onChangeHandler = this._onChangeHandler.bind(this);
+    this._onFormChangeHandler = this._onFormChangeHandler.bind(this);
+    this._onFormSubmission = this._onFormSubmission.bind(this);
+  }
+
+  _onFormChangeHandler(event) {
+    const input = event.target.name;
+    const value = event.target.value;
+    this.setState(prevState => ({
+        formObject: {
+          ...prevState.formObject,
+          [input]: value
+        }
+    }))
+  }
+
+  _onFormSubmission(){
+    const data = this.state.formObject;
+    axios.post(`${url}/target`, data)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   _onChangeHandler(searchTerm, callback) {
@@ -71,7 +108,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Modal />
+          <Modal onFormChangeHandler={this._onFormChangeHandler} onFormSubmission={this._onFormSubmission} />
           <Header records={this.state.targetData} contactRecords={Contacts} onChangeHandler={this._onChangeHandler} filteredList={this.state.filteredList}/>
           <Container records={this.state.targetData} />
       </div>

@@ -13,5 +13,9 @@ router.get('/targets', (req, res) => {
         where:{userId: 1}
     }).then((contacts) => res.json(contacts))
 })
+.post('/target', (req, res) => {
+    console.log(req.body);
+    res.status(201).send();
+})
 
 module.exports = router;

@@ -6,22 +6,18 @@ const closeModal = () => {
     document.querySelector('[data-modal-container]').classList.add('hide');
 }
 
-const saveForm = () => {
-
-}
-
-const Modal = () => {
+const Modal = (props) => {
     return (
         <div className="modal-overlay hide" data-modal-container>
             <div className="modal-container">
                 <div className="modal-header"><h2>New Target</h2></div>
                 <div className="modal-body">
-                <TargetForm />
+                <TargetForm onFormChangeHandler={props.onFormChangeHandler} />
                 </div>
                 <div className="modal-footer">
                 <button onClick={closeModal}>Cancel</button>
                 <button>Save & New</button>
-                <button onClick={saveForm}>Save</button>
+                <button type="submit" onClick={props.onFormSubmission}>Save</button>
                 </div>
             </div>
         </div>

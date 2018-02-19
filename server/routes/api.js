@@ -14,7 +14,7 @@ router.get('/targets', (req, res) => {
     }).then((contacts) => res.json(contacts))
 })
 .post('/target', (req, res) => {
-    console.log(req.body);
+    const {targetName, industry, annualRevenue, employees, location, dealLead, title, relatedContactName, relatedContactEmail, relatedContactTitle, relatedContactPhone} = req.body;
     res.status(201).send();
 })
 

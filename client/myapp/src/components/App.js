@@ -21,7 +21,7 @@ class App extends Component {
       error: null,
       filteredList: [],
       formObject: {
-        targetName: 'a',
+        targetName: '',
         industry: '',
         annualRevenue: null,
         employees: null,
